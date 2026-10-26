@@ -5,148 +5,554 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cobby07Prince | Data Analytics & Research</title>
+    <meta name="description" content="Prince Cobbinah's professional portfolio in data analytics and academic research.">
+
+    <title>Prince Cobbinah | Data Analytics & Research</title>
 
     <style>
+        :root {
+            --navy: #102a43;
+            --blue: #173f68;
+            --teal: #13b8a6;
+            --light: #f3f7fb;
+            --white: #ffffff;
+            --text: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f4f7fb;
-            color: #243247;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
         }
 
-        header {
-            background-color: #17365d;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+        a {
+            overflow-wrap: anywhere;
         }
 
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 36px;
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
         }
 
-        header p {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
+        /* Navigation */
         nav {
-            background-color: #102742;
-            padding: 14px;
-            text-align: center;
+            background: var(--white);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
         }
 
-        nav a {
-            color: white;
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            color: var(--navy);
+            font-weight: bold;
+            font-size: 19px;
             text-decoration: none;
-            margin: 0 12px;
         }
 
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #078f83;
+        }
+
+        /* Hero / profile */
+        .hero {
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: var(--white);
+            padding: 75px 0;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .profile-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #e5edf5;
+            border: 5px solid var(--teal);
+            color: var(--navy);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            padding: 12px;
+        }
+
+        .profile-placeholder .person-icon {
+            font-size: 66px;
+            line-height: 1.1;
+        }
+
+        .profile-placeholder small {
+            margin-top: 8px;
+            font-size: 11px;
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 54px);
+            line-height: 1.15;
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            color: #dce9f5;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 12px 0;
+        }
+
+        .hero-copy {
+            max-width: 680px;
+            color: #e4edf6;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--teal);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 11px 20px;
+            border-radius: 6px;
+            margin: 12px 8px 0 0;
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+
+        /* Main sections */
         main {
-            max-width: 950px;
-            margin: 30px auto;
-            padding: 0 20px;
+            padding: 45px 0;
         }
 
         section {
-            background-color: white;
-            margin-bottom: 22px;
+            margin-bottom: 45px;
+            scroll-margin-top: 25px;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 30px;
+            margin: 0 0 8px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 760px;
+            margin-top: 0;
+        }
+
+        .panel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 6px 22px rgba(16, 42, 67, 0.04);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 22px;
+        }
+
+        .card {
+            background: var(--white);
             padding: 25px;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--teal);
             border-radius: 10px;
         }
 
-        h2 {
-            color: #17365d;
+        .card h3 {
+            color: var(--navy);
+            line-height: 1.4;
+            margin-top: 14px;
         }
 
-        .project {
-            border-left: 4px solid #2b78a0;
-            padding-left: 15px;
-            margin-top: 20px;
+        .tag {
+            display: inline-block;
+            background: #e0f7f4;
+            color: #087d73;
+            border-radius: 20px;
+            padding: 4px 11px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status {
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            padding-top: 12px;
+            margin-top: 18px;
+        }
+
+        /* Contact */
+        .contact-panel {
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .contact-panel .section-title {
+            color: var(--white);
+        }
+
+        .contact-panel a {
+            color: #7ce5d8;
+            text-decoration: none;
+        }
+
+        .contact-panel a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .contact-list li {
+            margin: 13px 0;
         }
 
         footer {
-            background-color: #102742;
-            color: white;
+            background: #091c2e;
+            color: #d7e1eb;
+            padding: 24px 0;
             text-align: center;
-            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive layout for phones and tablets */
+        @media (max-width: 700px) {
+            .nav-inner {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 48px 0;
+                text-align: center;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .profile-placeholder {
+                width: 165px;
+                height: 165px;
+            }
+
+            .profile-placeholder .person-icon {
+                font-size: 54px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .panel,
+            .card,
+            .contact-panel {
+                padding: 21px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Cobby07Prince</h1>
-        <p>Data Analytics | Academic Research</p>
-        <p>Exploring data, investigating problems, and producing evidence-based insights.</p>
-    </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#analytics">Data Analytics</a>
-        <a href="#research">Academic Research</a>
-        <a href="#contact">Contact</a>
+        <div class="container nav-inner">
+            <a class="brand" href="#home">Prince Cobbinah</a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#research">Research</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
     </nav>
 
-    <main>
+    <header class="hero" id="home">
+        <div class="container hero-inner">
+
+            <!-- Replace this placeholder with your photograph later. -->
+            <div class="profile-placeholder"
+                 role="img"
+                 aria-label="Placeholder for Prince Cobbinah's profile photograph">
+                <span class="person-icon" aria-hidden="true">&#9786;</span>
+                <small>PROFILE PHOTO</small>
+                <small>COMING SOON</small>
+            </div>
+
+            <div>
+                <p class="eyebrow">Professional Portfolio</p>
+
+                <h1>Prince Cobbinah</h1>
+
+                <h2>Data Analytics | Academic Research</h2>
+
+                <p class="hero-copy">
+                    Exploring data, investigating problems, and using
+                    evidence to develop meaningful insights into
+                    economic, financial, and social questions.
+                </p>
+
+                <a class="button" href="#analytics">Explore My Projects</a>
+                <a class="button button-outline" href="#contact">Connect With Me</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- About profile -->
         <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Welcome to my professional portfolio. This website brings together
-                my work in data analytics and academic research. It will document
-                my projects, methods, findings, and continuing development.
-            </p>
+            <p class="eyebrow">My Background</p>
+            <h2 class="section-title">About Me</h2>
+
+            <div class="panel">
+                <p>
+                    I am developing my expertise in data analytics and
+                    academic research, with an interest in using evidence
+                    to understand problems, identify patterns, and support
+                    informed decision-making.
+                </p>
+
+                <p>
+                    My analytical learning includes working with financial
+                    transaction data, checking data quality, investigating
+                    unusual patterns, and communicating findings using
+                    Microsoft Excel.
+                </p>
+
+                <p>
+                    My research interests include quantitative analysis,
+                    time-series forecasting, and the application of
+                    statistical methods to economic and social issues.
+                    One of my research projects explores forecasting
+                    Ghana's youth unemployment using ARIMA and ETS methods.
+                </p>
+
+                <p>
+                    I value analytical rigour, continuous learning,
+                    independent thinking, and clear communication.
+                    Through this portfolio, I aim to document my methods,
+                    explain my findings, and demonstrate my growth as
+                    an analyst and researcher.
+                </p>
+            </div>
         </section>
 
+        <!-- Data analytics -->
         <section id="analytics">
-            <h2>Data Analytics</h2>
-            <p>
-                I use data analysis to investigate patterns, identify unusual
-                behaviour, and turn raw data into useful insights.
+            <p class="eyebrow">Pillar One</p>
+            <h2 class="section-title">Data Analytics</h2>
+
+            <p class="section-intro">
+                Investigating datasets to understand data quality,
+                identify patterns, explore anomalies, and communicate
+                insights that can inform decisions.
             </p>
 
-            <div class="project">
-                <h3>Transaction Detective</h3>
-                <p><strong>Focus:</strong> Fintech transaction analysis using Excel.</p>
-                <p>
-                    This project investigates transaction patterns, data quality,
-                    unusual amounts, failed transactions, and potential risk signals.
-                </p>
-                <p><em>Project status: Analysis in progress.</em></p>
+            <div class="cards">
+
+                <article class="card">
+                    <span class="tag">Microsoft Excel · Fintech</span>
+
+                    <h3>Transaction Detective</h3>
+
+                    <p>
+                        An investigation of a fictional financial
+                        transaction dataset. The project examines
+                        missing values, duplicate identifiers, unusual
+                        transaction amounts, transaction outcomes,
+                        and potential risk signals.
+                    </p>
+
+                    <p>
+                        The focus is on learning how to move from raw
+                        transaction records to careful, evidence-based
+                        conclusions.
+                    </p>
+
+                    <p class="status">
+                        Project status: Analysis in progress.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <span class="tag">Planned Project</span>
+
+                    <h3>Business Performance Analysis</h3>
+
+                    <p>
+                        A future project exploring business performance
+                        through measures such as sales, profitability,
+                        product performance, and customer trends.
+                    </p>
+
+                    <p class="status">
+                        Project status: Planned.
+                    </p>
+                </article>
+
             </div>
         </section>
 
+        <!-- Academic research -->
         <section id="research">
-            <h2>Academic Research</h2>
-            <p>
-                This section will showcase my research interests, research methods,
-                literature reviews, and academic writing.
+            <p class="eyebrow">Pillar Two</p>
+            <h2 class="section-title">Academic Research</h2>
+
+            <p class="section-intro">
+                Exploring research questions through appropriate
+                methods, careful analysis, and clear interpretation
+                of evidence.
             </p>
 
-            <div class="project">
-                <h3>Forecasting Ghana Youth Unemployment Using ARIMA and ETS</h3>
-                <p>
-                    A research manuscript exploring time-series forecasting methods
-                    for Ghana's youth unemployment.
-                </p>
-                <p><em>Manuscript status: In preparation.</em></p>
+            <div class="cards">
+
+                <article class="card">
+                    <span class="tag">Time-Series Forecasting</span>
+
+                    <h3>
+                        Forecasting Ghana Youth Unemployment
+                        Using ARIMA and ETS
+                    </h3>
+
+                    <p>
+                        A research manuscript exploring time-series
+                        forecasting methods for Ghana's youth
+                        unemployment.
+                    </p>
+
+                    <p>
+                        The work focuses on forecasting approaches,
+                        model evaluation, and the interpretation of
+                        results in an economic context.
+                    </p>
+
+                    <p class="status">
+                        Manuscript status: In preparation.
+                    </p>
+                </article>
+
             </div>
         </section>
 
+        <!-- Contact details -->
         <section id="contact">
-            <h2>Contact</h2>
-            <p>
-                Professional contact details and relevant links will be added here.
-            </p>
+            <div class="contact-panel">
+                <p class="eyebrow">Professional Connections</p>
+                <h2 class="section-title">Let's Connect</h2>
+
+                <p>
+                    I welcome professional connections, research
+                    discussions, and opportunities to learn and
+                    collaborate.
+                </p>
+
+                <ul class="contact-list">
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:princecobbinah176@gmail.com">
+                            princecobbinah176@gmail.com
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/prince-cobbinah-848863200/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View my LinkedIn profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/Cobby07Prince"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View my GitHub profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 Cobby07Prince | Data Analytics & Academic Research</p>
+        <div class="container">
+            <p>
+                &copy; 2026 Prince Cobbinah |
+                Data Analytics &amp; Academic Research
+            </p>
+        </div>
     </footer>
+
 </body>
 </html>
-
